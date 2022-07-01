@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Nathan-Mez/myFlix-client/issues"
   },
-  "homepage": "https://github.com/Nathan-Mez/myFlix-client#readme"
+  "homepage": "https://github.com/Nathan-Mez/myFlix-client#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0"
+  }
 }
