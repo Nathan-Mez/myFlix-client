@@ -24,4 +24,10 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-rc.0"
   }
+   "name": "my-package",
+  "version": "1.0.0",
+  "babel": {
+    "presets": [ ... ],
+    "plugins": [ ... ],
+  }
 }
