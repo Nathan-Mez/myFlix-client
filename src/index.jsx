@@ -6,10 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 //Import MainVeiw component
 import { MainView } from './components/main-view/main-view';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import Container from 'react-bootstrap/Container';
 
 //Import MainVeiw component
 import { MainView } from './components/main-view/main-view';
@@ -32,12 +28,12 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" fixed="top">
           <Container>
             <Navbar.Brand href="#home">
               <img
                 alt=""
-                src="./clapperboard.png"
+                src={require("./logo.png")}
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
