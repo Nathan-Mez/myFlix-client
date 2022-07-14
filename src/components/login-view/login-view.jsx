@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -5,6 +6,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+
+import './login-view.scss';
 
 
 export function LoginView(props) {
@@ -22,15 +25,15 @@ export function LoginView(props) {
   return (
     <Form>
       <Form.Group as={Row} className="mb-3" controlId="formUsername">
-      <Form.Label column sm={2}>Username:</Form.Label>
-        <Col sm={10}>
+       <Form.Label column sm={2}>Username:</Form.Label>
+        <Col sm={7}>
           <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
         </Col>
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formPassword">  
         <Form.Label column sm={2}>Password:</Form.Label>
-        <Col sm={10}>
+        <Col sm={7}>
           <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
         </Col>
       </Form.Group>

@@ -1,0 +1,17 @@
+
+$cream: #CFD2B2;
+$eggshell: #E2E1CA;
+$steelblue: #326273;
+$darkgreen: #38686B;
+
+
+
+Form{
+    background: $eggshell;
+    box-shadow: black 3px 5px 6px;
+    border-radius: 6px;
+    padding: 15px;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30vh;
+}

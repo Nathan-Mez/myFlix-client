@@ -1,9 +1,18 @@
-$color: steelblue;
+$cream: #CFD2B2;
+$eggshell: #E2E1CA;
+$steelblue: #326273;
+$darkgreen: #38686B;
+$rosswood: #66000A;
 
-.my-flix {
-  color: $color;
-}
 
 .nav-bar {
-  margin-bottom: 10%;
+  margin-bottom: 2%;
 }
+
+.app-container {
+  padding: 10% 0% 10% 0%;
+  background: linear-gradient(to top right, $rosswood, $steelblue);
+  background-repeat: no-repeat;
+}
+
+
