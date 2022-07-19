@@ -59,12 +59,13 @@ export function RegistrationView(props) {
 const handleRegister = (e) => {
   e.preventDefault();
   const isReq = validate();
+  console.log(username)
   if (isReq) {
-    axios.post('https://grandflix.herokuapp.com/users', null, { params:{ 
+    axios.post('https://grandflix.herokuapp.com/users', { 
       Username: username, 
       Password: password, 
       Email: email, 
-      Birthday: birthday }})
+      Birthday: birthday })
       .then((response) => {
         const data = response.data;
         console.log(data);

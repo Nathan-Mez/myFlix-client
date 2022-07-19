@@ -32196,7 +32196,7 @@ class DirectorView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"avpzT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"ahuic","react-bootstrap/Card":"MoOk8"}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-bootstrap/Card":"MoOk8","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"avpzT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"ahuic"}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -44184,7 +44184,7 @@ class GenreView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genre-view.scss":"3BqnD","@parcel/transformer-js/src/esmodule-helpers.js":"avpzT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"ahuic","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW"}],"3BqnD":[function() {},{}],"054li":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","react-bootstrap/Card":"MoOk8","./genre-view.scss":"3BqnD","@parcel/transformer-js/src/esmodule-helpers.js":"avpzT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"ahuic"}],"3BqnD":[function() {},{}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44845,13 +44845,12 @@ function RegistrationView(props) {
     const handleRegister = (e)=>{
         e.preventDefault();
         const isReq = validate();
-        if (isReq) _axiosDefault.default.post('https://grandflix.herokuapp.com/users', null, {
-            params: {
-                Username: username,
-                Password: password,
-                Email: email,
-                Birthday: birthday
-            }
+        console.log(username);
+        if (isReq) _axiosDefault.default.post('https://grandflix.herokuapp.com/users', {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
         }).then((response)=>{
             const data = response.data;
             console.log(data);
@@ -44869,7 +44868,7 @@ function RegistrationView(props) {
         },
         __source: {
             fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 83
+            lineNumber: 84
         },
         __self: this,
         children: [
@@ -44878,7 +44877,7 @@ function RegistrationView(props) {
                 controlId: "formUsername",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 85
+                    lineNumber: 86
                 },
                 __self: this,
                 children: [
@@ -44887,7 +44886,7 @@ function RegistrationView(props) {
                         sm: 2,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 86
+                            lineNumber: 87
                         },
                         __self: this,
                         children: "Username*"
@@ -44899,7 +44898,7 @@ function RegistrationView(props) {
                         },
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 87
+                            lineNumber: 88
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
@@ -44911,7 +44910,7 @@ function RegistrationView(props) {
                             required: true,
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 88
+                                lineNumber: 89
                             },
                             __self: this
                         })
@@ -44923,7 +44922,7 @@ function RegistrationView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 92
+                    lineNumber: 93
                 },
                 __self: this,
                 children: [
@@ -44932,7 +44931,7 @@ function RegistrationView(props) {
                         sm: 2,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 93
+                            lineNumber: 94
                         },
                         __self: this,
                         children: "Password*"
@@ -44944,7 +44943,7 @@ function RegistrationView(props) {
                         },
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 94
+                            lineNumber: 95
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
@@ -44957,7 +44956,7 @@ function RegistrationView(props) {
                             minLength: "5",
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 95
+                                lineNumber: 96
                             },
                             __self: this
                         })
@@ -44969,7 +44968,7 @@ function RegistrationView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 99
+                    lineNumber: 100
                 },
                 __self: this,
                 children: [
@@ -44978,7 +44977,7 @@ function RegistrationView(props) {
                         sm: 2,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 100
+                            lineNumber: 101
                         },
                         __self: this,
                         children: "Email*"
@@ -44990,7 +44989,7 @@ function RegistrationView(props) {
                         },
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 101
+                            lineNumber: 102
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
@@ -45002,7 +45001,7 @@ function RegistrationView(props) {
                             required: true,
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 102
+                                lineNumber: 103
                             },
                             __self: this
                         })
@@ -45014,7 +45013,7 @@ function RegistrationView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 106
+                    lineNumber: 107
                 },
                 __self: this,
                 children: [
@@ -45023,7 +45022,7 @@ function RegistrationView(props) {
                         sm: 2,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 107
+                            lineNumber: 108
                         },
                         __self: this,
                         children: "Birthdate"
@@ -45035,7 +45034,7 @@ function RegistrationView(props) {
                         },
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 108
+                            lineNumber: 109
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
@@ -45046,7 +45045,7 @@ function RegistrationView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 109
+                                lineNumber: 110
                             },
                             __self: this
                         })
@@ -45058,7 +45057,7 @@ function RegistrationView(props) {
                 controlId: "formRegisterLink",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 113
+                    lineNumber: 114
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -45068,7 +45067,7 @@ function RegistrationView(props) {
                     },
                     __source: {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 114
+                        lineNumber: 115
                     },
                     __self: this,
                     children: [
@@ -45077,7 +45076,7 @@ function RegistrationView(props) {
                             to: "/",
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 115
+                                lineNumber: 116
                             },
                             __self: this,
                             children: " Log-in"
@@ -45089,7 +45088,7 @@ function RegistrationView(props) {
                 className: "mb-3",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 119
+                    lineNumber: 120
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -45099,7 +45098,7 @@ function RegistrationView(props) {
                     },
                     __source: {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 120
+                        lineNumber: 121
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -45108,7 +45107,7 @@ function RegistrationView(props) {
                         onClick: handleRegister,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 121
+                            lineNumber: 122
                         },
                         __self: this,
                         children: "Register"
