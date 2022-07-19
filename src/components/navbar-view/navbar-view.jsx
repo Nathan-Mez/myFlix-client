@@ -45,7 +45,7 @@ return (
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
                     {isAuth() && (
-                        <Nav.Link href = {'/users/${user}'}>{user}</Nav.Link>)}
+                        <Nav.Link href = {`/users/${user}`}>{user}</Nav.Link>)}
                     {isAuth() && (
                         <Button variant="warning" onClick={handleLogOut}>Logout</Button> )}
                     {!isAuth() && (

@@ -80,32 +80,32 @@ const handleRegister = (e) => {
 };
 return (
 
-    <Form>
+    <Form style={{ width: '30rem' }}>
 
     <Form.Group  className="mb-3" controlId="formUsername">
      <Form.Label column sm={2}>Username*</Form.Label>
-      <Col>
+     <Col sm={{ span: 10, offset: 2 }}>
         <Form.Control type="text" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)}required />
       </Col>
     </Form.Group>
 
     <Form.Group  className="mb-3" controlId="formPassword">  
       <Form.Label column sm={2}>Password*</Form.Label>
-      <Col>
+      <Col sm={{ span: 10, offset: 2 }}>
         <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength="5" />
       </Col>
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formPassword">  
       <Form.Label column sm={2}>Email*</Form.Label>
-      <Col>
+      <Col sm={{ span: 10, offset: 2 }}>
         <Form.Control type="email" placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
       </Col>
     </Form.Group>
 
     <Form.Group  className="mb-3" controlId="formPassword">  
       <Form.Label column sm={2}>Birthdate</Form.Label>
-      <Col>
+      <Col sm={{ span: 10, offset: 2 }}>
         <Form.Control type="date" placeholder="dd/mm/yyyy" value={birthday} onChange={(e) => setBirthday(e.target.value)} />
       </Col>
     </Form.Group>

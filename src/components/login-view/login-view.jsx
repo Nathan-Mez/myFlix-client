@@ -61,21 +61,23 @@ const validate = () => {
 
 
   return (
-    <Form>
+    <Form  style={{ width: '30rem' }}>
       <Form.Group  className="mb-3" controlId="formUsername">
        <Form.Label>Username:</Form.Label>
-
+       <Col sm={{ span: 10, offset: 2 }}>
           <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
           {/* code added here to display validation error */}
           {usernameErr && <p>{usernameErr}</p>} 
-
+       </Col>
       </Form.Group>
 
       <Form.Group  className="mb-3" controlId="formPassword">  
         <Form.Label>Password:</Form.Label>
+        <Col sm={{ span: 10, offset: 2 }}>
           <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
           {/* code added here to display validation error */}
-          {passwordErr && <p>{passwordErr}</p>} 
+          {passwordErr && <p>{passwordErr}</p>}
+          </Col>   
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formRegisterLink">
