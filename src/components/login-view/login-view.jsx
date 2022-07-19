@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -13,13 +15,49 @@ import './login-view.scss';
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  // Declare hook for each input
+  const [ usernameErr, setUsernameErr ] = useState('');
+  const [ passwordErr, setPasswordErr ] = useState('');
+
+  // validate user inputs
+const validate = () => {
+  let isReq = true;
+  if(!username){
+   setUsernameErr('Username Required');
+   isReq = false;
+  }else if(username.length < 4){
+   setUsernameErr('Username must be 5 characters long');
+   isReq = false;
+  }
+  if(!password){
+   setPasswordErr('Password Required');
+   isReq = false;
+  }else if(password.length < 6){
+   setPassword('Password must be 6 characters long');
+   isReq = false;
+  }
+
+  return isReq;
+}
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    // Send a request to the server for authentication, then call props.onLoggedIn(username)
-    props.onLoggedIn(username);
+    /* Send a request to the server for authentication */
+    axios.post('https://grandflix.herokuapp.com/login', null, { params:{
+      Username: username,
+      Password: password
+    }})
+    .then(response => {
+      const data = response.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e => {
+      console.log('no such user')
+    });
   };
+  
+
 
 
   return (
@@ -27,20 +65,24 @@ export function LoginView(props) {
       <Form.Group as={Row} className="mb-3" controlId="formUsername">
        <Form.Label column sm={2}>Username:</Form.Label>
         <Col sm={7}>
-          <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+          <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
+          {/* code added here to display validation error */}
+          {usernameErr && <p>{usernameErr}</p>} 
         </Col>
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formPassword">  
         <Form.Label column sm={2}>Password:</Form.Label>
         <Col sm={7}>
-          <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+          <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+          {/* code added here to display validation error */}
+          {passwordErr && <p>{passwordErr}</p>} 
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Form.Check label="Remember me" />
+      <Form.Group as={Row} className="mb-3" controlId="formRegisterLink">
+        <Col sm={{ span: 10, offset: 2 }}>Not registered?
+          <Link to="/register">  Sign-Up</Link>
         </Col>
       </Form.Group>
       
@@ -55,10 +97,10 @@ export function LoginView(props) {
 
 }
 
+
+
 LoginView.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }),
   onLoggedIn: PropTypes.func.isRequired,
 };
+
+
