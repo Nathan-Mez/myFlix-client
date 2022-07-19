@@ -62,22 +62,20 @@ const validate = () => {
 
   return (
     <Form>
-      <Form.Group as={Row} className="mb-3" controlId="formUsername">
-       <Form.Label column sm={2}>Username:</Form.Label>
-        <Col sm={7}>
+      <Form.Group  className="mb-3" controlId="formUsername">
+       <Form.Label>Username:</Form.Label>
+
           <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
           {/* code added here to display validation error */}
           {usernameErr && <p>{usernameErr}</p>} 
-        </Col>
+
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPassword">  
-        <Form.Label column sm={2}>Password:</Form.Label>
-        <Col sm={7}>
+      <Form.Group  className="mb-3" controlId="formPassword">  
+        <Form.Label>Password:</Form.Label>
           <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
           {/* code added here to display validation error */}
           {passwordErr && <p>{passwordErr}</p>} 
-        </Col>
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formRegisterLink">
@@ -86,7 +84,7 @@ const validate = () => {
         </Col>
       </Form.Group>
       
-      <Form.Group as={Row} className="mb-3">
+      <Form.Group className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
           <Button variant="primary" type="submit" onClick={handleSubmit}>Log in</Button>
         </Col>
