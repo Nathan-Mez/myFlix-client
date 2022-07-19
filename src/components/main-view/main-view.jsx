@@ -83,7 +83,7 @@ export class MainView extends React.Component {
     return (
       <Router>
         <NavBar user={user}/>
-        <Container>
+        <Container className="d-flex">
 
         <Row className="main-view justify-content-md-center">
 
@@ -134,7 +134,7 @@ export class MainView extends React.Component {
 
             if (movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <GenreView genreMovies={movies.filter(m => m.Genre.Name === match.params.name).Genre} 
+              <GenreView  genreMovies={movies.filter(m => m.Genre.Name === match.params.name)} 
                          genre={movies.find(m => m.Genre.Name === match.params.name).Genre} 
                          onBackClick={() => history.goBack()} />
             </Col>
