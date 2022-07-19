@@ -1,49 +1,128 @@
+
+
 import React, { useState } from 'react';
+//import PropTypes from 'prop-types';
+
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import axios from 'axios';
+import { Container } from 'react-bootstrap';
+import { Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './registration-view.scss';
 
-export function RegistrationView(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(username, password);
-  
-     props.onLoggedIn(username);
+
+//user registration form taking necessary user details
+export function RegistrationView(props) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthday, setBirthday] = useState('');
+
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+  const [emailErr, setEmailErr] = useState('');
+
+
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr("Username is required");
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr("Username must be 5 characters long");
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr("Password is required (6 characters long)");
+      isReq = false;
+    } else if (password.length < 5) {
+      setPasswordErr("Password must be 5 characters long");
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr("Add Email");
+      isReq = false;
+    } else if (email.indexOf("@") === -1) {
+      setEmail("Email must be a valid email address");
+      isReq = false;
+    }
+
+    return isReq;
   };
 
-  return (
-    <form>
-       <p>Enter a new Username and Password to Open an Account </p><br></br>
-      <label>
-        Username:
-        <br></br><input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-      </label><br></br>
-      <label>
-        Email:
-        <br></br><input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      </label><br></br>
-      <label>
-        Password:
-        <br></br><input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      </label><br></br>
-      <label>
-        Birthday:
-        <br></br><input type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
-      </label><br></br>
+const handleRegister = (e) => {
+  e.preventDefault();
+  const isReq = validate();
+  if (isReq) {
+    axios.post('https://grandflix.herokuapp.com/users', null, { params:{ 
+      Username: username, 
+      Password: password, 
+      Email: email, 
+      Birthday: birthday }})
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        alert("Your registration has been successfully processed. You can now proceed to login.");
+        window.open("/", "_self");
+        //open in the current tab
+      })
+      .catch((response) => {
+        console.error(response);
+        alert("error registering the user");
+      });
+  }
+};
+return (
 
-      <p>Already have an Account <a href='#'>Log-in</a></p><br></br>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
-  );
+    <Form>
+
+    <Form.Group as={Row} className="mb-3" controlId="formUsername">
+     <Form.Label column sm={2}>Username*</Form.Label>
+      <Col sm={7}>
+        <Form.Control type="text" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)}required />
+      </Col>
+    </Form.Group>
+
+    <Form.Group as={Row} className="mb-3" controlId="formPassword">  
+      <Form.Label column sm={2}>Password*</Form.Label>
+      <Col sm={7}>
+        <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength="5" />
+      </Col>
+    </Form.Group>
+
+    <Form.Group as={Row} className="mb-3" controlId="formPassword">  
+      <Form.Label column sm={2}>Email*</Form.Label>
+      <Col sm={7}>
+        <Form.Control type="email" placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      </Col>
+    </Form.Group>
+
+    <Form.Group as={Row} className="mb-3" controlId="formPassword">  
+      <Form.Label column sm={2}>Birthdate</Form.Label>
+      <Col sm={7}>
+        <Form.Control type="date" placeholder="dd/mm/yyyy" value={birthday} onChange={(e) => setBirthday(e.target.value)} />
+      </Col>
+    </Form.Group>
+
+    <Form.Group as={Row} className="mb-3" controlId="formRegisterLink">
+      <Col sm={{ span: 10, offset: 2 }}>Already have an account?
+        <Link to="/">  Log-in</Link>
+      </Col>
+    </Form.Group>
+
+    <Form.Group as={Row} className="mb-3">
+        <Col sm={{ span: 10, offset: 2 }}>
+          <Button variant="primary" type="submit" onClick={handleRegister}>Register</Button>
+        </Col>
+    </Form.Group>
+   </Form>
+)
 }
 
-RegistrationView.propTypes = {
-  register: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.string,
-  }),
-};
+
