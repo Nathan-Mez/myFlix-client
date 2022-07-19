@@ -6,113 +6,23 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import '../profile-view/profile-view.scss';
 
 export function ProfileView(props) {
-  const {  goBack, movies } = props;
+  const { onBackClick, movies } = props;
   const username = localStorage.getItem('username');
   const email = localStorage.getItem('email');
   const birthday = localStorage.getItem('birthday');
   const token = localStorage.getItem('token');
 
-  const deleteAccount = () => {
-    axios
-      .delete(`https://grandflix.herokuapp.com/users/${username}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((res) => {
-        alert(`Your user account was deleted.`);
-        localStorage.clear();
-        window.open('/', '_self');
-      })
-      .catch((err) => console.log(err));
-  };
 
   return (
-    <Container className="mt-4" style={{ width: '80%' }}>
-      <h1>
-        Profile of <span className="text-info">{username}</span>
-      </h1>
-      <Button className="mb-4" variant="warning" onClick={goBack}>
-        « Back
-      </Button>
+    <Card className="profile-view">
+        <Card.Body>
+         <Card.Title className="font-weight-bold">{username}</Card.Title>
+         <Card.Text><span className="font-weight-bold">Email: </span>{email}</Card.Text>
+         <Card.Text><span className="font-weight-bold">Birthdate: </span>{birthday}</Card.Text>
+         
+         <Button onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
+        </Card.Body>
+      </Card>  
 
-      <h3>
-        Email: <span className="text-info fw-bold ml-4">{email}</span>
-      </h3>
-      <h3>
-        Birthday:{' '}
-        <span className="text-info fw-bold">{`${birthday.slice(
-          5,
-          7
-        )}-${birthday.slice(8, 10)}-${birthday.slice(0, 4)}`}</span>
-        <span id="mini" className="ml-2">
-          (mm-dd-yyyy)
-        </span>
-      </h3>
-      
-    </Container>
   );
 }
-
-
-
-
-/*export const ProfileView = (props) => {
-  //const { favoriteMovies, goBack, movies, handleFavorite } = props;
-  const {  goBack, movies } = props;
-  const username = localStorage.getItem('username');
-  const email = localStorage.getItem('email');
-  const birthday = localStorage.getItem('birthday');
-  const token = localStorage.getItem('token');
-
-  
-
-  return (
-    <Container className="mt-4" style={{ width: '80%' }}>
-      <h1>
-        Profile of <span className="text-info">{username}</span>
-      </h1>
-      <Button className="mb-4" variant="warning" onClick={goBack}>
-        « Back
-      </Button>
-
-      <h3>
-        Email: <span className="text-info fw-bold ml-4">{email}</span>
-      </h3>
-      <h3>
-        Birthday:{' '}
-        <span className="text-info fw-bold">{`${birthday.slice(
-          5,
-          7
-        )}-${birthday.slice(8, 10)}-${birthday.slice(0, 4)}`}</span>
-        <span id="mini" className="ml-2">
-          (mm-dd-yyyy)
-        </span>
-      </h3>
-      
-    </Container>
-  );
-};
-
-/*
-<h2 className="subtitle mt-4">LIST OF ♥️ MOVIES:</h2>
-      {favoriteMovies.length !== 0 ? (
-        <Row className="justify-content-center mt-3">
-          {favoriteMovies.map((movieId) => {
-            let movie = movies.find((m) => m._id === movieId);
-            return (
-              <FavoriteCard
-                key={movieId}
-                movie={movie}
-                handleFavorite={handleFavorite}
-              >
-                {movie.title}
-              </FavoriteCard>
-            );
-          })}
-        </Row>
-      ) : (
-        <h2 className="subtitle">
-          <span className="text-danger">
-            You don't have movies in your favorite movies list.
-          </span>
-        </h2>
-      )}*/
