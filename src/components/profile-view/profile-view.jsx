@@ -13,6 +13,19 @@ export function ProfileView(props) {
   const token = localStorage.getItem('token');
 
 
+  const handleDelete = () => {
+    axios.delete(`https://grandflix.herokuapp.com/users/${user}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(() => {
+      alert(`Your account is successfully deleted.`)
+      localStorage.clear();
+      window.open('/register', '_self');
+    }).
+    catch(error => console.error(error))
+  }
+
+
   return (
     <Card className="profile-view" style={{ width: '25rem' }} >
         <Card.Body>
@@ -20,7 +33,8 @@ export function ProfileView(props) {
          <Card.Text><span className="font-weight-bold">Email: </span>{email}</Card.Text>
          <Card.Text><span className="font-weight-bold">Birthdate: </span>{birthday}</Card.Text>
          
-         <Button onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
+         <Button onClick={() => { onBackClick(null); }} variant="warning">Back</Button>{'  '}
+         <Button variant="danger" onClick={handleDelete}>Delete Account</Button>
         </Card.Body>
       </Card>  
 

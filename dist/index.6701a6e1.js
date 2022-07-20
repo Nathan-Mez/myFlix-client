@@ -25480,10 +25480,14 @@ class MainView extends _reactDefault.default.Component {
     /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/ onLoggedIn(authData) {
         console.log(authData);
         this.setState({
-            user: authData.user.Username
+            user: authData.user.Username,
+            email: authData.user.Email,
+            birthday: authData.user.Birth_date
         });
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
+        localStorage.setItem('email', authData.user.Email);
+        localStorage.setItem('birthday', authData.user.Birth_date);
         this.getMovies(authData.token);
     }
     getMovies(token) {
@@ -25505,7 +25509,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 84
+                lineNumber: 88
             },
             __self: this,
             children: [
@@ -25513,7 +25517,7 @@ class MainView extends _reactDefault.default.Component {
                     user: user,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 85
+                        lineNumber: 89
                     },
                     __self: this
                 }),
@@ -25521,14 +25525,14 @@ class MainView extends _reactDefault.default.Component {
                     className: "d-flex",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 86
+                        lineNumber: 90
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
                         className: "main-view justify-content-md-center",
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 88
+                            lineNumber: 92
                         },
                         __self: this,
                         children: [
@@ -25559,7 +25563,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 90
+                                    lineNumber: 94
                                 },
                                 __self: this
                             }),
@@ -25574,7 +25578,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 102
+                                    lineNumber: 106
                                 },
                                 __self: this
                             }),
@@ -25604,7 +25608,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 111
+                                    lineNumber: 115
                                 },
                                 __self: this
                             }),
@@ -25634,7 +25638,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 121
+                                    lineNumber: 125
                                 },
                                 __self: this
                             }),
@@ -25666,7 +25670,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 132
+                                    lineNumber: 136
                                 },
                                 __self: this
                             }),
@@ -25686,7 +25690,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 145
+                                    lineNumber: 149
                                 },
                                 __self: this
                             }),
@@ -25705,7 +25709,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 152
+                                    lineNumber: 156
                                 },
                                 __self: this
                             })
@@ -45317,6 +45321,18 @@ function ProfileView(props) {
     const email = localStorage.getItem('email');
     const birthday = localStorage.getItem('birthday');
     const token = localStorage.getItem('token');
+    const handleDelete = ()=>{
+        _axiosDefault.default.delete(`https://grandflix.herokuapp.com/users/${user}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(()=>{
+            alert(`Your account is successfully deleted.`);
+            localStorage.clear();
+            window.open('/register', '_self');
+        }).catch((error)=>console.error(error)
+        );
+    };
     return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
         className: "profile-view",
         style: {
@@ -45324,13 +45340,13 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "src/components/profile-view/profile-view.jsx",
-            lineNumber: 17
+            lineNumber: 30
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 18
+                lineNumber: 31
             },
             __self: this,
             children: [
@@ -45338,7 +45354,7 @@ function ProfileView(props) {
                     className: "font-weight-bold",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 19
+                        lineNumber: 32
                     },
                     __self: this,
                     children: username
@@ -45346,7 +45362,7 @@ function ProfileView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 20
+                        lineNumber: 33
                     },
                     __self: this,
                     children: [
@@ -45354,7 +45370,7 @@ function ProfileView(props) {
                             className: "font-weight-bold",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 20
+                                lineNumber: 33
                             },
                             __self: this,
                             children: "Email: "
@@ -45365,7 +45381,7 @@ function ProfileView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 21
+                        lineNumber: 34
                     },
                     __self: this,
                     children: [
@@ -45373,7 +45389,7 @@ function ProfileView(props) {
                             className: "font-weight-bold",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 21
+                                lineNumber: 34
                             },
                             __self: this,
                             children: "Birthdate: "
@@ -45388,10 +45404,21 @@ function ProfileView(props) {
                     variant: "warning",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 23
+                        lineNumber: 36
                     },
                     __self: this,
                     children: "Back"
+                }),
+                '  ',
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                    variant: "danger",
+                    onClick: handleDelete,
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 37
+                    },
+                    __self: this,
+                    children: "Delete Account"
                 })
             ]
         })
