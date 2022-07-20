@@ -44263,7 +44263,7 @@ function LoginView(props) {
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
                 controlId: "formUsername",
                 __source: {
@@ -44271,51 +44271,49 @@ function LoginView(props) {
                     lineNumber: 65
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 66
-                        },
-                        __self: this,
-                        children: "Username:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                        sm: {
-                            span: 10,
-                            offset: 2
-                        },
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 67
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                type: "text",
-                                placeholder: "Enter username",
-                                value: username,
-                                onChange: (e)=>setUsername(e.target.value)
-                                ,
-                                __source: {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 68
-                                },
-                                __self: this
-                            }),
-                            usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                __source: {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 70
-                                },
-                                __self: this,
-                                children: usernameErr
-                            })
-                        ]
-                    })
-                ]
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: {
+                        span: 10,
+                        offset: 1
+                    },
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 66
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 67
+                            },
+                            __self: this,
+                            children: "Username:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "text",
+                            placeholder: "Enter username",
+                            value: username,
+                            onChange: (e)=>setUsername(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 68
+                            },
+                            __self: this
+                        }),
+                        usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 70
+                            },
+                            __self: this,
+                            children: usernameErr
+                        })
+                    ]
+                })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
                 controlId: "formPassword",
                 __source: {
@@ -44323,49 +44321,47 @@ function LoginView(props) {
                     lineNumber: 74
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 75
-                        },
-                        __self: this,
-                        children: "Password:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                        sm: {
-                            span: 10,
-                            offset: 2
-                        },
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 76
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                type: "password",
-                                placeholder: "Password",
-                                value: password,
-                                onChange: (e)=>setPassword(e.target.value)
-                                ,
-                                __source: {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 77
-                                },
-                                __self: this
-                            }),
-                            passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                __source: {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 79
-                                },
-                                __self: this,
-                                children: passwordErr
-                            })
-                        ]
-                    })
-                ]
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: {
+                        span: 10,
+                        offset: 1
+                    },
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 75
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 76
+                            },
+                            __self: this,
+                            children: "Password:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "password",
+                            placeholder: "Password",
+                            value: password,
+                            onChange: (e)=>setPassword(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 77
+                            },
+                            __self: this
+                        }),
+                        passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 79
+                            },
+                            __self: this,
+                            children: passwordErr
+                        })
+                    ]
+                })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 as: _rowDefault.default,
@@ -44377,7 +44373,7 @@ function LoginView(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                    sm: {
+                    xs: {
                         span: 10,
                         offset: 2
                     },
@@ -44408,7 +44404,7 @@ function LoginView(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    sm: {
+                    xs: {
                         span: 10,
                         offset: 2
                     },
@@ -44872,7 +44868,7 @@ function RegistrationView(props) {
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
                 controlId: "formUsername",
                 __source: {
@@ -44880,28 +44876,26 @@ function RegistrationView(props) {
                     lineNumber: 86
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        column: true,
-                        sm: 2,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 87
-                        },
-                        __self: this,
-                        children: "Username*"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        sm: {
-                            span: 10,
-                            offset: 2
-                        },
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 88
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: {
+                        span: 10,
+                        offset: 1
+                    },
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 87
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 88
+                            },
+                            __self: this,
+                            children: "Username*"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
                             type: "text",
                             placeholder: "Enter username",
                             value: username,
@@ -44914,10 +44908,10 @@ function RegistrationView(props) {
                             },
                             __self: this
                         })
-                    })
-                ]
+                    ]
+                })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
                 controlId: "formPassword",
                 __source: {
@@ -44925,28 +44919,26 @@ function RegistrationView(props) {
                     lineNumber: 93
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        column: true,
-                        sm: 2,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 94
-                        },
-                        __self: this,
-                        children: "Password*"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        sm: {
-                            span: 10,
-                            offset: 2
-                        },
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 95
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: {
+                        span: 10,
+                        offset: 1
+                    },
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 94
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 95
+                            },
+                            __self: this,
+                            children: "Password*"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
                             type: "password",
                             placeholder: "Password",
                             value: password,
@@ -44960,10 +44952,10 @@ function RegistrationView(props) {
                             },
                             __self: this
                         })
-                    })
-                ]
+                    ]
+                })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
                 controlId: "formPassword",
                 __source: {
@@ -44971,28 +44963,26 @@ function RegistrationView(props) {
                     lineNumber: 100
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        column: true,
-                        sm: 2,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 101
-                        },
-                        __self: this,
-                        children: "Email*"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        sm: {
-                            span: 10,
-                            offset: 2
-                        },
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 102
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: {
+                        span: 10,
+                        offset: 1
+                    },
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 101
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 102
+                            },
+                            __self: this,
+                            children: "Email*"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
                             type: "email",
                             placeholder: "email@email.com",
                             value: email,
@@ -45005,10 +44995,10 @@ function RegistrationView(props) {
                             },
                             __self: this
                         })
-                    })
-                ]
+                    ]
+                })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
                 controlId: "formPassword",
                 __source: {
@@ -45016,28 +45006,26 @@ function RegistrationView(props) {
                     lineNumber: 107
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        column: true,
-                        sm: 2,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 108
-                        },
-                        __self: this,
-                        children: "Birthdate"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        sm: {
-                            span: 10,
-                            offset: 2
-                        },
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 109
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    xs: {
+                        span: 10,
+                        offset: 1
+                    },
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 108
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 109
+                            },
+                            __self: this,
+                            children: "Birthdate"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
                             type: "date",
                             placeholder: "dd/mm/yyyy",
                             value: birthday,
@@ -45049,8 +45037,8 @@ function RegistrationView(props) {
                             },
                             __self: this
                         })
-                    })
-                ]
+                    ]
+                })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
                 className: "mb-3",
@@ -45061,7 +45049,7 @@ function RegistrationView(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                    sm: {
+                    xs: {
                         span: 10,
                         offset: 2
                     },
@@ -45092,7 +45080,7 @@ function RegistrationView(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    sm: {
+                    xs: {
                         span: 10,
                         offset: 2
                     },

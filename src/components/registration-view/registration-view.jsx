@@ -84,41 +84,41 @@ return (
     <Form style={{ width: '30rem' }}>
 
     <Form.Group  className="mb-3" controlId="formUsername">
-     <Form.Label column sm={2}>Username*</Form.Label>
-     <Col sm={{ span: 10, offset: 2 }}>
+     <Col xs={{ span: 10, offset: 1 }}>
+     <Form.Label>Username*</Form.Label>
         <Form.Control type="text" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)}required />
       </Col>
     </Form.Group>
 
     <Form.Group  className="mb-3" controlId="formPassword">  
-      <Form.Label column sm={2}>Password*</Form.Label>
-      <Col sm={{ span: 10, offset: 2 }}>
+      <Col xs={{ span: 10, offset: 1 }}>
+      <Form.Label>Password*</Form.Label>
         <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength="5" />
       </Col>
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formPassword">  
-      <Form.Label column sm={2}>Email*</Form.Label>
-      <Col sm={{ span: 10, offset: 2 }}>
+      <Col xs={{ span: 10, offset: 1 }}>
+      <Form.Label>Email*</Form.Label>
         <Form.Control type="email" placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
       </Col>
     </Form.Group>
 
     <Form.Group  className="mb-3" controlId="formPassword">  
-      <Form.Label column sm={2}>Birthdate</Form.Label>
-      <Col sm={{ span: 10, offset: 2 }}>
+      <Col xs={{ span: 10, offset: 1 }}>
+      <Form.Label>Birthdate</Form.Label>
         <Form.Control type="date" placeholder="dd/mm/yyyy" value={birthday} onChange={(e) => setBirthday(e.target.value)} />
       </Col>
     </Form.Group>
 
     <Form.Group  className="mb-3" controlId="formRegisterLink">
-      <Col sm={{ span: 10, offset: 2 }}>Already have an account?
+      <Col xs={{ span: 10, offset: 2 }}>Already have an account?
         <Link to="/">  Log-in</Link>
       </Col>
     </Form.Group>
 
     <Form.Group  className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
+        <Col xs={{ span: 10, offset: 2 }}>
           <Button variant="primary" type="submit" onClick={handleRegister}>Register</Button>
         </Col>
     </Form.Group>

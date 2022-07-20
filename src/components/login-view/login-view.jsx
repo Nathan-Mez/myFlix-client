@@ -63,8 +63,8 @@ const validate = () => {
   return (
     <Form  style={{ width: '30rem' }}>
       <Form.Group  className="mb-3" controlId="formUsername">
+       <Col xs={{ span: 10, offset: 1 }}>
        <Form.Label>Username:</Form.Label>
-       <Col sm={{ span: 10, offset: 2 }}>
           <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
           {/* code added here to display validation error */}
           {usernameErr && <p>{usernameErr}</p>} 
@@ -72,8 +72,8 @@ const validate = () => {
       </Form.Group>
 
       <Form.Group  className="mb-3" controlId="formPassword">  
+        <Col xs={{ span: 10, offset: 1 }}>
         <Form.Label>Password:</Form.Label>
-        <Col sm={{ span: 10, offset: 2 }}>
           <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
           {/* code added here to display validation error */}
           {passwordErr && <p>{passwordErr}</p>}
@@ -81,13 +81,13 @@ const validate = () => {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formRegisterLink">
-        <Col sm={{ span: 10, offset: 2 }}>Not registered?
+        <Col xs={{ span: 10, offset: 2 }}>Not registered?
           <Link to="/register">  Sign-Up</Link>
         </Col>
       </Form.Group>
       
       <Form.Group className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
+        <Col xs={{ span: 10, offset: 2 }}>
           <Button variant="primary" type="submit" onClick={handleSubmit}>Log in</Button>
         </Col>
       </Form.Group>
