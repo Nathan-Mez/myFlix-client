@@ -11,7 +11,6 @@ import Col from 'react-bootstrap/Col';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
-//import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { NavBar } from '../navbar-view/navbar-view';
@@ -73,9 +72,6 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      //this.setState({
-        //movies: response.data
-      //});
       this.props.setMovies(response.data);
     })
     .catch(function (error) {
@@ -84,7 +80,6 @@ class MainView extends React.Component {
   }
 
   render() {
-    //const { movies, user } = this.state;
     let { movies } = this.props;
     let { user } = this.state;
 
@@ -100,12 +95,6 @@ class MainView extends React.Component {
             if (!user) return <Col> <LoginView onLoggedIn={user => this.onLoggedIn(user)} /> </Col>
 
             if (movies.length === 0) return <div className="main-view" />;
-
-            //return movies.map(m => (
-              //<Col md={3} key={m._id} className="card-group mt-5">
-                //<MovieCard movie={m} />
-              //</Col>
-            //))
 
             return <Col md={13} className="card-group mt-5"><MoviesList movies={movies}/></Col>;
 
