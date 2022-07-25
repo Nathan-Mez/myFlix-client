@@ -61,7 +61,7 @@ const validate = () => {
 
 
   return (
-    <Form  style={{ width: '30rem' }}>
+    <Form  className="login-view" style={{ width: '30rem' }}>
       <Form.Group  className="mb-3" controlId="formUsername">
        <Col xs={{ span: 10, offset: 1 }}>
        <Form.Label>Username:</Form.Label>

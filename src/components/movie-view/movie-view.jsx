@@ -25,7 +25,7 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view d-lg-flex flex-row">
+      <div className="movie-view d-lg-flex flex-row mx-auto mt-5">
         <div className="movie-poster">
           <img src={movie.ImagePath} />
         </div>

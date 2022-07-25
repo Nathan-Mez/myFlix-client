@@ -27,7 +27,7 @@ export function ProfileView(props) {
 
 
   return (
-    <Card className="profile-view" style={{ width: '25rem' }} >
+    <Card className="profile-view" style={{ width: '25rem'}} >
         <Card.Body>
          <Card.Title className="font-weight-bold">{username}</Card.Title>
          <Card.Text><span className="font-weight-bold">Email: </span>{email}</Card.Text>

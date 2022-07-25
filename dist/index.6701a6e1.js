@@ -32157,7 +32157,7 @@ class DirectorView extends _reactDefault.default.Component {
     render() {
         const { director , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
-            className: "director-view",
+            className: "director-view mt-5",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
                 lineNumber: 13
@@ -44144,6 +44144,7 @@ class GenreView extends _reactDefault.default.Component {
     render() {
         const { genre , genreMovies , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+            className: "mt-5",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
                 lineNumber: 15
@@ -44287,6 +44288,7 @@ function LoginView(props) {
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+        className: "login-view",
         style: {
             width: '30rem'
         },
@@ -44508,7 +44510,7 @@ class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "movie-view d-lg-flex flex-row",
+            className: "movie-view d-lg-flex flex-row mx-auto mt-5",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 28

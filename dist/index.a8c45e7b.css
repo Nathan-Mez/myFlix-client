@@ -25,7 +25,9 @@ Form {
 }
 
 
-
+.profile-view {
+  margin: 40% 70%;
+}
 
 
 html, body, MovieView, .app-container {
