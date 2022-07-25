@@ -34,7 +34,7 @@ html, body, MovieView, .app-container {
 }
 
 .app-container {
-  padding-top: 10%;
+  padding-top: 5%;
   background: linear-gradient(to top right, #66000A, #326273);
   background-repeat: no-repeat;
   background-size: cover;

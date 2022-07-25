@@ -25575,12 +25575,12 @@ class MainView extends _reactDefault.default.Component {
                                     //</Col>
                                     //))
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        md: 3,
+                                        md: 13,
                                         className: "card-group mt-5",
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                                             movies: movies
                                         })
-                                    }, m._id));
+                                    }));
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
@@ -46997,6 +46997,7 @@ function MoviesList(props) {
             }),
             filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     md: 3,
+                    className: "card-group mt-5",
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
                         lineNumber: 29

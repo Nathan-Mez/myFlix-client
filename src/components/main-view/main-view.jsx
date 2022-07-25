@@ -107,7 +107,7 @@ class MainView extends React.Component {
               //</Col>
             //))
 
-            return <Col md={3} key={m._id} className="card-group mt-5"><MoviesList movies={movies}/></Col>;
+            return <Col md={13} className="card-group mt-5"><MoviesList movies={movies}/></Col>;
 
           }} />
 
