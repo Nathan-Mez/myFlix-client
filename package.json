@@ -2,6 +2,7 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://Nathan-Mez.github.io/myFlix-client",
   "dependencies": {
     "axios": "^0.27.2",
     "js-tokens": "^4.0.0",
@@ -26,7 +27,9 @@
   },
   "scripts": {
     "start": "parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
