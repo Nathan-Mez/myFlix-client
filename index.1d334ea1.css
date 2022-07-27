@@ -1,0 +1,39 @@
+Form {
+  background: #E2E1CA;
+  box-shadow: black 3px 5px 6px;
+  border-radius: 6px;
+  padding: 15px;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30vh;
+}
+
+.movie-view {
+  background-color: #E2E1CA;
+  padding: 5%;
+  border-radius: 5px;
+  margin-bottom: 50vh;
+}
+
+.movie-details {
+  background-color: white;
+  border-radius: 6px;
+  margin-left: 15px;
+  padding: 20px;
+}
+
+
+
+
+
+
+.nav-bar {
+  margin-bottom: 2%;
+}
+
+.app-container {
+  padding: 10% 0% 10% 0%;
+  background: linear-gradient(to top right, #66000A, #326273);
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */
