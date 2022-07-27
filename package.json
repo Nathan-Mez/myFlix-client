@@ -2,8 +2,6 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://Nathan-Mez.github.io/myFlix-client",
-  "start": "parcel src/index.html",
   "dependencies": {
     "axios": "^0.27.2",
     "js-tokens": "^4.0.0",
@@ -23,14 +21,18 @@
     "@babel/parser": "^7.18.6",
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-sass": "^2.0.0-rc.0",
-    "gh-pages": "^4.0.0",
-    "parcel-bundler": "^1.12.5"
+    "gh-pages": "^4.0.0"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build src/index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+=======
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> parent of 1122995 (gh-pages error changes)
   },
   "repository": {
     "type": "git",
