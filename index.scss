@@ -1,0 +1,21 @@
+$cream: #CFD2B2;
+$eggshell: #E2E1CA;
+$steelblue: #326273;
+$darkgreen: #38686B;
+$rosswood: #66000A;
+
+html, body, MovieView, .app-container{
+  height: auto;
+  min-height: 100vh;
+}
+
+.app-container {
+  padding-top: 5%;
+  background: linear-gradient(to top right, $rosswood, $steelblue);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
