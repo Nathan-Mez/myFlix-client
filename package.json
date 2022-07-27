@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://Nathan-Mez.github.io/myFlix-client",
+  "start": "parcel src/index.html",
   "dependencies": {
     "axios": "^0.27.2",
     "js-tokens": "^4.0.0",
@@ -28,6 +29,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
