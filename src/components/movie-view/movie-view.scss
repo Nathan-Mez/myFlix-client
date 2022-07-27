@@ -1,0 +1,18 @@
+$cream: #CFD2B2;
+$eggshell: #E2E1CA;
+$steelblue: #326273;
+$darkgreen: #38686B;
+$rosswood: #66000A;
+
+.movie-view{
+    background-color: $eggshell;
+    padding: 5%;
+    border-radius: 5px;
+}
+
+.movie-details{
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 15px;
+    padding: 20px;
+}
